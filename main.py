@@ -58,8 +58,8 @@ if __name__ == '__main__':
                 print(db_manager.get_vacancies_with_keyword(keyword))
             case '0':
                 print('-' * 50)
-                print('Goodbye!')
-                quit()
+                print('-' * 50)
+                quit('The program has been deactivated')
             case _:
                 print('-' * 50)
                 print('Unknown activity')
