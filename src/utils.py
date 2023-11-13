@@ -3,6 +3,11 @@ import requests
 
 
 def get_data(data: list) -> list:
+    """
+    Take a list of companies ID from hh.ru and return a list of dicts
+    :param data: list of companies ID
+    :return: list of dicts
+    """
     result = []
     for item in data:
         url = f'https://api.hh.ru/employers/{item}'
@@ -14,7 +19,12 @@ def get_data(data: list) -> list:
     return result
 
 
-def create_db(name: str, params: dict):
+def create_db(name: str, params: dict) -> None:
+    """
+    Create database in postgres
+    :param name: name of the future database
+    :param params: params to connection
+    """
     conn = psycopg2.connect(dbname='postgres', **params)
     conn.autocommit = True
 
@@ -27,7 +37,12 @@ def create_db(name: str, params: dict):
         conn.close()
 
 
-def create_tables(name: str, params):
+def create_tables(name: str, params: dict) -> None:
+    """
+    Creates tables in the database
+    :param name: name of database
+    :param params: parameters to connection
+    """
     conn = psycopg2.connect(name, **params)
 
     try:
@@ -64,6 +79,12 @@ def salary_format(value):
 
 
 def filling_database(data: list, db_name: str, params: dict) -> None:
+    """
+    Filling tables with data
+    :param data: list of dicts
+    :param db_name: name of database
+    :param params: parameters to connection
+    """
     conn = psycopg2.connect(database=db_name, **params)
 
     try:
