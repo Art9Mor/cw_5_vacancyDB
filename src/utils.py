@@ -27,14 +27,12 @@ def create_db(name: str, params: dict) -> None:
     """
     conn = psycopg2.connect(dbname='postgres', **params)
     conn.autocommit = True
+    curs = conn.cursor()
 
-    try:
-        with conn:
-            with conn.cursor() as curs:
-                curs.execute(f'DROP DATABASE IF EXISTS {name}')
-                curs.execute(f'CREATE DATABASE {name}')
-    finally:
-        conn.close()
+    curs.execute(f'DROP DATABASE IF EXISTS {name}')
+    curs.execute(f'CREATE DATABASE {name}')
+
+    conn.close()
 
 
 def create_tables(name: str, params: dict) -> None:
@@ -43,7 +41,7 @@ def create_tables(name: str, params: dict) -> None:
     :param name: name of database
     :param params: parameters to connection
     """
-    conn = psycopg2.connect(name, **params)
+    conn = psycopg2.connect(database=name, **params)
 
     try:
         with conn:
@@ -57,10 +55,10 @@ def create_tables(name: str, params: dict) -> None:
                 curs.execute("""CREATE TABLE IF NOT EXISTS vacancies
                                 (
                                     vacancy_id SERIAL PRIMARY KEY,
-                                    company_id SMALLINT NOT NULL,
+                                    company_id INT NOT NULL,
                                     FOREIGN KEY(company_id) REFERENCES companies(company_id),
                                     title_vacancy VARCHAR(150) NOT NULL,
-                                    salary SMALLINT,
+                                    salary INT,
                                     link VARCHAR(250) NOT NULL,
                                     description TEXT
                                 );""")
@@ -78,14 +76,14 @@ def salary_format(value):
             return value['to']
 
 
-def filling_database(data: list, db_name: str, params: dict) -> None:
+def filling_database(data: list, name: str, params: dict) -> None:
     """
     Filling tables with data
     :param data: list of dicts
-    :param db_name: name of database
+    :param name: name of database
     :param params: parameters to connection
     """
-    conn = psycopg2.connect(database=db_name, **params)
+    conn = psycopg2.connect(database=name, **params)
 
     try:
         with conn:

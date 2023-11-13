@@ -20,9 +20,9 @@ if __name__ == '__main__':
     params = config()
 
     create_db(db_name, params)
-    print(f'Data Base {db_name} was successfully created')
+    print(f'Data Base {db_name} was successfully created!')
 
-    params.update({'dbname': db_name})
+    # params.update({'dbname': db_name})
 
     create_tables(db_name, params)
     filling_database(get_data(employers_list), db_name, params)
