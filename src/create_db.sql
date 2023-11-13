@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS companies
 CREATE TABLE IF NOT EXISTS vacancies
 (
     vacancy_id SERIAL PRIMARY KEY,
-    company_id SMALLINT NOT NULL,
+    company_id INT NOT NULL,
     FOREIGN KEY(company_id) REFERENCES companies(company_id),
     title_vacancy VARCHAR(150) NOT NULL,
-    salary SMALLINT,
+    salary INT,
     link VARCHAR(250) NOT NULL,
     description TEXT
 );
