@@ -3,18 +3,21 @@ from src.config import config
 from src.utils import create_db, create_tables, filling_database, get_data
 
 if __name__ == '__main__':
-    employers_list = [
-        8550,  # ЦФТ
-        78638,  # Тинькофф
-        1740,  # Яндекс
-        2180,  # Озон
-        2748,  # Ростелеком
-        3776,  # МТС
-        23040,  # Банк Открытие
-        3127,  # Мегафон
-        39305,  # Газпром нефть
-        4934  # Билайн
-    ]
+    employers_list = []
+    introductory = 10
+
+    print('Enter the ids of employers or the "0" (zero) for interruption\n')
+
+    while introductory > 0:
+        us_input = int(input())
+        introductory -= 1
+        if us_input != 0:
+            employers_list.append(us_input)
+        else:
+            break
+
+    print(employers_list)
+
     script_file = 'create_db.sql'
     db_name = input('Enter your DB name: ')
     params = config()
