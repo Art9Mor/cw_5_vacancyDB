@@ -1,10 +1,10 @@
-## cw_5_vacancyDB
-# (Program for processing vacancies)
+# cw_5_vacancyDB
+## (Program for processing vacancies)
 
   The program is designed to process vacancies from selected employers from the website hh.ru using
   PostgreSQL to create, fill and manage your work database.
 
-# Employers choice
+## Employers choice
 
   The selection of employers occurs by entering their id into a list, which is then entered 
   into the database along with the necessary information.
@@ -27,7 +27,7 @@
           4934  # Билайн
       ]
 
-# User menu
+## User menu
 
   The user menu is designed to create, populate and manage the database 
   using input fields and corresponding commands.
