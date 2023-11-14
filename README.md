@@ -6,22 +6,22 @@
 
   To run the program you need: 
   
-    1) Clone a project using the command:  
+  1) Clone a project using the command:  
 
       git clone https://github.com/Art9Mor/cw_5_vacancyDB.git  
 
-    2) Install Poetry:  
+  2) Install Poetry:  
 
        pip install poetry  
 
-    3) Activate Poetry:  
-
+  3) Activate Poetry:  
+  
        poetry shell  
-
-    4) Install Poetry dependencies:  
-
+  
+  4) Install Poetry dependencies:  
+  
        poetry install
-
+  
 ## Employers choice
 
   The selection of employers occurs by entering their id into a list, which is then entered 
@@ -52,23 +52,7 @@
 
   To create and fill out a data slot, you need to follow simple instructions:
 
-    1) Clone a project using the command:  
-
-      git clone https://github.com/Art9Mor/cw_5_vacancyDB.git  
-
-    2) Install Poetry:  
-
-       pip install poetry  
-
-    3) Activate Poetry:  
-
-       poetry shell  
-
-    4) Install Poetry dependencies:  
-
-       poetry install
-  
-    1) Create and fill 'database.ini' file with your data to connect to your PostgreSQL:
+  1) Create and fill 'database.ini' file with your data to connect to your PostgreSQL:
     
       [postgresql]  
       host=(host_name)  
@@ -76,4 +60,4 @@
       password=(password)  
       port=(port_number) 
       
-    2) 
+  2) 
