@@ -60,4 +60,10 @@
       password=(password)  
       port=(port_number) 
       
-  2) 
+  2) Run the program.
+    
+  3) Enter the ids.
+  
+  4) Enter your DataBase name.
+  
+  5) Follow the instructions of the Main menu
