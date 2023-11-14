@@ -14,7 +14,7 @@
   The number of entered ids is limited. You can add 10 companies to the list.
   Sample part of code: 
 
-  employers_list = [
+  employers_list = [  
           8550,  # ЦФТ  
           78638,  # Тинькофф  
           1740,  # Яндекс  
@@ -32,11 +32,11 @@
   The user menu is designed to create, populate and manage the database 
   using input fields and corresponding commands.
 
-  To create and fill out a data slot, you need to follow simple instructions:
-    1) Create and fill 'database.ini' file with your data to connect to your PostgreSQL:
-      [postgresql]
-      host=(host_name)
-      user=(user_name)
-      password=(password)
-      port=(port_number)
+  To create and fill out a data slot, you need to follow simple instructions:  
+    1) Create and fill 'database.ini' file with your data to connect to your PostgreSQL:  
+      [postgresql]  
+      host=(host_name)  
+      user=(user_name)  
+      password=(password)  
+      port=(port_number)  
     2) 
